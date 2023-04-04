@@ -1,16 +1,25 @@
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
-class HomeController extends GetxController {
+class DateController extends GetxController {
   var collectionToday = true.obs;
   var collectionTomorrow = false.obs;
   var collectionDate = false.obs;
+  var deliveryToday = true.obs;
+  var deliveryTomorrow = false.obs;
+  var deliveryDate = false.obs;
   DateTime todayDate = DateTime.now();
   DateTime tomorrowDate = DateTime.now().add(const Duration(days: 1));
   DateTime nextDateDate = DateTime.now().add(const Duration(days: 2));
+  DateTime todayDateDelivery = DateTime.now();
+  DateTime tomorrowDateDelivery = DateTime.now().add(const Duration(days: 1));
+  DateTime nextDateDateDelivery = DateTime.now().add(const Duration(days: 2));
   String today = '';
   String tomorrow = '';
   String nextDay = '';
+  var todayDelivery = ''.obs;
+  var tomorrowDelivery = ''.obs;
+  var nextDayDelivery = ''.obs;
   RxString timeSlotValue = 'Morning'.obs;
   RxString collectTimeSlotMorning = '7:00am - 8:00am'.obs;
   RxString collectTimeSlotAfternoon = '12:00pm - 1:00pm'.obs;
@@ -55,6 +64,7 @@ class HomeController extends GetxController {
     today = '${todayDate.day} ${DateFormat.MMM().format(todayDate)}';
     tomorrow = '${tomorrowDate.day} ${DateFormat.MMM().format(tomorrowDate)}';
     nextDay = '${nextDateDate.day} ${DateFormat.MMM().format(nextDateDate)}';
+
     super.onInit();
   }
 }
