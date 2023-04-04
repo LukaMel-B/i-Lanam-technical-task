@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:i_lanam_task/app/modules/home/controllers/home_controller.dart';
+import 'package:i_lanam_task/app/modules/home/controllers/delivery_controller.dart';
 import 'package:i_lanam_task/app/modules/home/widgets/choice_chip_widget.dart';
 
-class DeliveryDateView extends GetView<HomeController> {
+class DeliveryDateView extends GetView<DeliveryController> {
   const DeliveryDateView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
@@ -12,33 +12,33 @@ class DeliveryDateView extends GetView<HomeController> {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           CustomChoiceChip(
-            isSelected: controller.collectionToday.value,
+            isSelected: controller.deliveryToday.value,
             onPressed: () {
-              controller.collectionTomorrow.value = false;
-              controller.collectionToday.value = true;
-              controller.collectionDate.value = false;
+              controller.deliveryTomorrow.value = false;
+              controller.deliveryToday.value = true;
+              controller.deliveryDate.value = false;
             },
-            subTitle: controller.today,
+            subTitle: controller.todayDelivery.value,
             title: 'Today',
           ),
           CustomChoiceChip(
-            isSelected: controller.collectionTomorrow.value,
+            isSelected: controller.deliveryTomorrow.value,
             onPressed: () {
-              controller.collectionTomorrow.value = true;
-              controller.collectionToday.value = false;
-              controller.collectionDate.value = false;
+              controller.deliveryTomorrow.value = true;
+              controller.deliveryToday.value = false;
+              controller.deliveryDate.value = false;
             },
-            subTitle: controller.tomorrow,
+            subTitle: controller.tomorrowDelivery.value,
             title: 'Tomorrow',
           ),
           CustomChoiceChip(
-            isSelected: controller.collectionDate.value,
+            isSelected: controller.deliveryDate.value,
             onPressed: () {
-              controller.collectionTomorrow.value = false;
-              controller.collectionToday.value = false;
-              controller.collectionDate.value = true;
+              controller.deliveryTomorrow.value = false;
+              controller.deliveryToday.value = false;
+              controller.deliveryDate.value = true;
             },
-            subTitle: controller.nextDay,
+            subTitle: controller.nextDayDelivery.value,
             title: 'Next Date',
           )
         ],

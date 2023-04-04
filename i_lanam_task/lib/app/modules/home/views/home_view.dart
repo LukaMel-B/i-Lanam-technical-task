@@ -5,6 +5,7 @@ import 'package:i_lanam_task/app/modules/home/controllers/home_controller.dart';
 import 'package:i_lanam_task/app/modules/home/views/delivery_view.dart';
 import 'package:i_lanam_task/app/modules/home/widgets/collection_date/collection_date_picker.dart';
 import 'package:i_lanam_task/app/modules/home/widgets/collection_date/collection_time_slot_picker.dart';
+import 'package:i_lanam_task/app/modules/home/widgets/continue_button.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
@@ -31,6 +32,8 @@ class HomeView extends GetView<HomeController> {
           const DeliveryView()
         ],
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: const CustomButton(),
     );
   }
 

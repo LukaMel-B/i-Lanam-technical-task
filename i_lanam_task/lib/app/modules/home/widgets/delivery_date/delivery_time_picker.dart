@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:i_lanam_task/app/modules/home/controllers/home_controller.dart';
+import 'package:i_lanam_task/app/modules/home/controllers/delivery_controller.dart';
 import 'package:i_lanam_task/app/modules/home/widgets/time_slot_widget.dart';
 
-class CollectionTimePicker extends GetView<HomeController> {
-  const CollectionTimePicker({super.key});
+class DeliveryTimePicker extends GetView<DeliveryController> {
+  const DeliveryTimePicker({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        GetBuilder(builder: (HomeController controller) {
+        GetBuilder(builder: (DeliveryController controller) {
           return TimeSlotWidget(
             list: controller.timeSlot,
             onPressed: controller.updateCollectionTimeSlot,
